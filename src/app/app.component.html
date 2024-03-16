@@ -1,0 +1,155 @@
+<div class="home">
+
+  <nav>
+    <div>
+      <img src="../assets/Sankey_logo.svg" alt="logo">
+    </div>
+    <div></div>
+  </nav>
+
+
+  <div class="back-button">
+    <a href="#"><img src="../assets/back-icon.svg" alt="back-button"></a>
+    <p>Details/<span class="package-id">123456789</span></p>
+  </div>
+
+  <main>
+    <div class="header">
+      <p>View Details</p>
+      <p>XYZ PACKAGING</p>
+    </div>
+
+    <div class="package-details">
+      <div class="supplier-div">
+        <div>
+          <img src="../assets/defaultImg.png" alt="supplier-image">
+        </div>
+
+        <div class="supplier-details flex-column">
+          <h4>Supplier Information <span>(Shipping)</span></h4>
+
+          <!-- <div class="supplier-container">
+            <div class="supplier-data-div" *ngFor="let item of supplierDetails | keyvalue">
+              <div class="key">{{item.key}}</div>
+              <div class="value">{{item.value}}</div>
+            </div>
+          </div> -->
+
+          <div class="supplier-table">
+            <div class="supplier-container">
+              <div>Company Name</div>
+              <div>{{supplierDetails.companyName}}</div>
+              <div>Company Address</div>
+              <div>{{supplierDetails.companyAddress}}</div>
+              <div>Pkg Person Contact Name</div>
+              <div>{{supplierDetails.pkgPersonName}}</div>
+              <div>Email</div>
+              <div>{{supplierDetails.email}}</div>
+            </div>
+
+            <div class="supplier-container">
+              <div>Vendor Code</div>
+              <div>{{supplierDetails.vendorCode}}</div>
+              <div>State, Country</div>
+              <div>{{supplierDetails.stateCountry}}</div>
+              <div>Tel No</div>
+              <div>{{supplierDetails.telNo}}</div>
+              <div>Fax No</div>
+              <div>{{supplierDetails.faxNo}}</div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <div class="package-status">
+        <div class="package-status-sub-item" *ngFor="let item of packageStatus | keyvalue">
+          <p class="item">{{item.key}}</p>
+          <p class="item">{{item.value}}</p>
+        </div>
+      </div>
+
+      <div class="package_part_info flex-column">
+        <h4>1. &nbsp; Program and Part Information</h4>
+        <div class="package-part-table">
+          <div class="package-part-container">
+            <div>XYZ Company Receving Location</div>
+            <div>{{programPartInfo.receiverLocation}}</div>
+            <div>ABC Part No.</div>
+            <div>{{programPartInfo.partNo}}</div>
+            <div>ABC Part Description</div>
+            <div>{{programPartInfo.part_desc}}</div>
+            <div>Part Weight (Kg)</div>
+            <div>{{programPartInfo.partWeight}}</div>
+          </div>
+
+          <div class="package-part-container">
+            <div>Part Dimension (L X W X H) (mm)</div>
+            <div>{{programPartInfo.partDimension[0]}} X {{programPartInfo.partDimension[1]}} X
+              {{programPartInfo.partDimension[2]}}</div>
+            <div>Annual Volume (Projected)</div>
+            <div>{{programPartInfo.volume}}</div>
+            <div>No. of parts per vehicle</div>
+            <div>{{programPartInfo.partPerVehicle}}</div>
+            <div>Models Applicable</div>
+            <div>{{programPartInfo.modelsApplicable}}</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="visual-references flex-column">
+        <h4>2. &nbsp; Visual References (Part & Packaging)</h4>
+        <div class="package-images-container">
+          <div class="package_image_block" *ngFor="let imagedata of visual_reference | keyvalue">
+            <div>{{imagedata.key}}</div>
+            <div><img src={{imagedata.value}}></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="flex-column">
+        <h4>3.Packaging Information</h4>
+        <div class="packaging-spec-container">
+          <div class="column">
+            <p>Specifications</p>
+            <div class="spec_types" *ngFor="let spec_data of Specifications">{{spec_data}}</div>
+          </div>
+          <div class="column">
+            <p>Primary Packaging</p>
+            <div class="spec_contain" *ngFor="let spec_data of primaryPackaging">{{spec_data}}</div>
+          </div>
+          <div class="column">
+            <p>Secondary Packaging</p>
+            <div class="spec_contain" *ngFor="let spec_data of secondaryPackaging">{{spec_data}}</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="comment_section flex-column">
+        <h4>5.Miscellaneous Comment</h4>
+        <input type="text">
+      </div>
+
+      <div class="approval_section flex-column">
+        <h4>6. Approval Information</h4>
+        <div class="approval_data">
+          <div class="approval_data_heading">
+            <div>Department / Function</div>
+            <div>Name</div>
+            <div>Date</div>
+          </div>
+          <div class="approval_data_content" *ngFor="let approval_info of approvalData.data">
+            <div id="static_name_field">Packaging Person</div>
+            <div>{{approval_info.person}}</div>
+            <div>{{approval_info.date}}</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <footer>
+    <p>&copy; Copyright 2023 <span>Sankey Solutions.</span> All Rights Reserved</p>
+  </footer>
+
+</div>
