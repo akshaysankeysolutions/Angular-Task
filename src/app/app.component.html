@@ -1,15 +1,13 @@
 <div class="home">
-
   <nav>
     <div>
-      <img src="../assets/Sankey_logo.svg" alt="logo">
+      <img src="../assets/Sankey_logo.svg" alt="logo" />
     </div>
     <div></div>
   </nav>
 
-
   <div class="back-button">
-    <a href="#"><img src="../assets/back-icon.svg" alt="back-button"></a>
+    <a href="#"><img src="../assets/back-icon.svg" alt="back-button" /></a>
     <p>Details/<span class="package-id">123456789</span></p>
   </div>
 
@@ -22,134 +20,217 @@
     <div class="package-details">
       <div class="supplier-div">
         <div>
-          <img src="../assets/defaultImg.png" alt="supplier-image">
+          <img src="../assets/defaultImg.png" alt="supplier-image" />
         </div>
 
         <div class="supplier-details flex-column">
-          <h4>Supplier Information <span>(Shipping)</span></h4>
-
-          <!-- <div class="supplier-container">
-            <div class="supplier-data-div" *ngFor="let item of supplierDetails | keyvalue">
-              <div class="key">{{item.key}}</div>
-              <div class="value">{{item.value}}</div>
-            </div>
-          </div> -->
+          <p>Supplier Information <span>(Shipping)</span></p>
 
           <div class="supplier-table">
             <div class="supplier-container">
               <div>Company Name</div>
-              <div>{{supplierDetails.companyName}}</div>
+              <div>{{ data.supplierDetails.companyName }}</div>
               <div>Company Address</div>
-              <div>{{supplierDetails.companyAddress}}</div>
+              <div>{{ data.supplierDetails.companyAddress }}</div>
               <div>Pkg Person Contact Name</div>
-              <div>{{supplierDetails.pkgPersonName}}</div>
+              <div>{{ data.supplierDetails.pkgPersonName }}</div>
               <div>Email</div>
-              <div>{{supplierDetails.email}}</div>
+              <div>{{ data.supplierDetails.email }}</div>
             </div>
 
             <div class="supplier-container">
               <div>Vendor Code</div>
-              <div>{{supplierDetails.vendorCode}}</div>
+              <div>{{ data.supplierDetails.vendorCode }}</div>
               <div>State, Country</div>
-              <div>{{supplierDetails.stateCountry}}</div>
+              <div>{{ data.supplierDetails.stateCountry }}</div>
               <div>Tel No</div>
-              <div>{{supplierDetails.telNo}}</div>
+              <div>{{ data.supplierDetails.telNo }}</div>
               <div>Fax No</div>
-              <div>{{supplierDetails.faxNo}}</div>
+              <div>{{ data.supplierDetails.faxNo }}</div>
             </div>
           </div>
-
         </div>
       </div>
 
       <div class="package-status">
-        <div class="package-status-sub-item" *ngFor="let item of packageStatus | keyvalue">
-          <p class="item">{{item.key}}</p>
-          <p class="item">{{item.value}}</p>
+        <div
+          class="package-status-sub-item"
+          *ngFor="let item of data.packageStatus | keyvalue"
+        >
+          <p class="item">{{ item.key }}</p>
+          <p class="item">{{ item.value }}</p>
         </div>
       </div>
 
       <div class="package_part_info flex-column">
-        <h4>1. &nbsp; Program and Part Information</h4>
+        <p>1. &nbsp; Program and Part Information</p>
         <div class="package-part-table">
           <div class="package-part-container">
             <div>XYZ Company Receving Location</div>
-            <div>{{programPartInfo.receiverLocation}}</div>
+            <div>{{ data.programPartInfo.receiverLocation }}</div>
             <div>ABC Part No.</div>
-            <div>{{programPartInfo.partNo}}</div>
+            <div>{{ data.programPartInfo.partNo }}</div>
             <div>ABC Part Description</div>
-            <div>{{programPartInfo.part_desc}}</div>
+            <div>{{ data.programPartInfo.part_desc }}</div>
             <div>Part Weight (Kg)</div>
-            <div>{{programPartInfo.partWeight}}</div>
+            <div>{{ data.programPartInfo.partWeight }}</div>
           </div>
 
           <div class="package-part-container">
             <div>Part Dimension (L X W X H) (mm)</div>
-            <div>{{programPartInfo.partDimension[0]}} X {{programPartInfo.partDimension[1]}} X
-              {{programPartInfo.partDimension[2]}}</div>
+            <div>
+              {{ data.programPartInfo.partDimension[0] }} X
+              {{ data.programPartInfo.partDimension[1] }} X
+              {{ data.programPartInfo.partDimension[2] }}
+            </div>
             <div>Annual Volume (Projected)</div>
-            <div>{{programPartInfo.volume}}</div>
+            <div>{{ data.programPartInfo.volume }}</div>
             <div>No. of parts per vehicle</div>
-            <div>{{programPartInfo.partPerVehicle}}</div>
+            <div>{{ data.programPartInfo.partPerVehicle }}</div>
             <div>Models Applicable</div>
-            <div>{{programPartInfo.modelsApplicable}}</div>
+            <div>{{ data.programPartInfo.modelsApplicable }}</div>
           </div>
         </div>
       </div>
 
       <div class="visual-references flex-column">
-        <h4>2. &nbsp; Visual References (Part & Packaging)</h4>
+        <p>2. &nbsp; Visual References (Part & Packaging)</p>
         <div class="package-images-container">
-          <div class="package_image_block" *ngFor="let imagedata of visual_reference | keyvalue">
-            <div>{{imagedata.key}}</div>
-            <div><img src={{imagedata.value}}></div>
+          <div
+            class="package_image_block"
+            *ngFor="let imagedata of data.visual_reference | keyvalue"
+          >
+            <div>{{ imagedata.key }}</div>
+            <div><img src="{{ imagedata.value }}" /></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="packingData flex-column">
+        <p>3.Packaging Information</p>
+        <div class="packaging-spec-container">
+          <div class="column">
+            <div>Specifications</div>
+            <div>Primary Packaging</div>
+            <div>Secondary Packaging</div>
+          </div>
+    
+          <div class="specificationHeader">
+            <div class="specificationTitle">
+                <div>Density (Qty of parts)</div>
+                <div>Packaging Strategy</div>
+                <div>Carton Code</div>
+                <div>Carton Type(Design)</div>
+                <div>Packaging Material Type</div>
+                <div>Securement / Closure Type</div>
+                <div>Total Loaded Wt.(kg - Full)</div>
+                <div>Outside Dimension (L X W X H) (mm)</div>
+                <div>Dunnage & Description</div>
+                <div>Labels (Quantity / Location)</div>
+                <div>Container Ownership</div>
+            </div>
+            <div class="primaryContent">
+              <div class="contentDetail" *ngFor="let spec_data of data.specificationData">
+                <div>{{ spec_data.density }}</div>
+                <div>{{ spec_data.packagingStrategy }}</div>
+                <div>{{ spec_data.cartonCode }}</div>
+                <div>{{ spec_data.cartonType }}</div>
+                <div>{{ spec_data.materialType }}</div>
+                <div>{{ spec_data.securemnetClosureType }}</div>
+                <div>{{ spec_data.totalWeight }}</div>
+                <div class="rowArray3">
+                  <div *ngFor="let subDim of spec_data.dimension">{{ subDim }}</div>
+                </div>
+                <div class="rowArray2">
+                  <div *ngFor="let subDesc of spec_data.dunnageDesc">{{ subDesc }}</div>
+                </div>
+                <div class="rowArray2">
+                  <div *ngFor="let subLabel of spec_data.lables">{{ subLabel }}</div>
+                </div>
+                <div>{{ spec_data.ownership }}</div>
+              </div>
+            </div>
           </div>
         </div>
       </div>
 
       <div class="flex-column">
-        <h4>3.Packaging Information</h4>
-        <div class="packaging-spec-container">
-          <div class="column">
-            <p>Specifications</p>
-            <div class="spec_types" *ngFor="let spec_data of Specifications">{{spec_data}}</div>
-          </div>
-          <div class="column">
-            <p>Primary Packaging</p>
-            <div class="spec_contain" *ngFor="let spec_data of primaryPackaging">{{spec_data}}</div>
-          </div>
-          <div class="column">
-            <p>Secondary Packaging</p>
-            <div class="spec_contain" *ngFor="let spec_data of secondaryPackaging">{{spec_data}}</div>
-          </div>
+        <p>4.Shipping & Logistics</p>
+        <div class="shippingDataContainer">
+            <div class="dataContainer1">
+                <div>Vehicle type / Size</div>
+                <div>Pallet Dimension (L X W X H) (mm)</div>
+                <div>Sec Packaging per transit modes</div>
+                <div>No of Pry Packs per Sec Packs</div>
+                <div>Terms</div>
+                <div>Hazardous Material Class</div>
+                <div>loop Size (for Returnable)</div>
+                <div>Life of Returnable Packaging</div>
+                <div>Unloading & Loading responsibility</div>
+                <div>Supply at XYZ</div>
+            </div>
+            <div class="dataContainer shippingMiddleColumn">
+                <div>{{ data.shippingLogisticData.vehicleTypeSize }}</div>
+                <div class="rowArrayX">
+                  <div *ngFor="let subDim of data.shippingLogisticData.dimension">{{ subDim }}</div>
+                </div>
+                <div>{{ data.shippingLogisticData.transitMode }}</div>
+                <div>{{ data.shippingLogisticData.pryPacks }}</div>
+                <div>{{ data.shippingLogisticData.terms }}</div>
+                <div>{{ data.shippingLogisticData.materialClass }}</div>
+                <div>{{ data.shippingLogisticData.loopSize }}</div>
+                <div>{{ data.shippingLogisticData.lifeOfPackaging }}</div>
+                <div>{{ data.shippingLogisticData.loadUnloadResp }}</div>
+                <div>{{data.shippingLogisticData.supplyAt}}</div>
+            </div>
+            <div class="dataContainer spanColumn">
+              <div class="spanHeading">Theoretical XYZ Utilisation</div>
+              <div class="spanrow1">{{data.shippingLogisticData.percentageUtiize}}</div>
+              <div class="rowArrayY spanrow2">
+                <div>Compliant(>85%)</div>
+                <div>Non-Compliant(<85%)</div>
+              </div>
+              <div class="spanrow3">{{data.shippingLogisticData.remarks}}</div>
+              <div class="spanrow4"></div>
+            </div>
         </div>
       </div>
 
       <div class="comment_section flex-column">
-        <h4>5.Miscellaneous Comment</h4>
-        <input type="text">
+        <p>5.Miscellaneous Comment</p>
+        <input type="text" />
       </div>
 
       <div class="approval_section flex-column">
-        <h4>6. Approval Information</h4>
+        <p>6. Approval Information</p>
         <div class="approval_data">
           <div class="approval_data_heading">
             <div>Department / Function</div>
             <div>Name</div>
             <div>Date</div>
           </div>
-          <div class="approval_data_content" *ngFor="let approval_info of approvalData.data">
+          <div class="approval_data_content" *ngFor="let approval_info of data.approvalData">
             <div id="static_name_field">Packaging Person</div>
-            <div>{{approval_info.person}}</div>
-            <div>{{approval_info.date}}</div>
+            <div class="approvalData">{{ approval_info.person }}</div>
+            <div class="approvalData">{{ approval_info.date }}</div>
           </div>
         </div>
       </div>
+
+
+      <div class="downloadButton">
+        <button>Download</button>
+      </div>
+
     </div>
+
+
   </main>
 
   <footer>
-    <p>&copy; Copyright 2023 <span>Sankey Solutions.</span> All Rights Reserved</p>
+    <p>
+      &copy; Copyright 2023 <span>Sankey Solutions.</span> All Rights Reserved
+    </p>
   </footer>
 
 </div>
