@@ -20,7 +20,7 @@
     <div class="package-details">
 
       <div class="supplier-div">
-        <div>
+        <div class="imageDiv">
           <img src="../assets/defaultImg.png" alt="supplier-image" />
         </div>
 
@@ -101,6 +101,7 @@
 
       <div class="visual-references flex-column">
         <p class="heading">2.Visual References <span class="subHeading">(Part & Packaging)</span></p>
+        <div></div>
         <div class="package-images-container">
           <div
             class="package_image_block"
@@ -175,10 +176,10 @@
                 <div>Unloading & Loading responsibility</div>
                 <div>Supply at XYZ</div>
             </div>
-            <div class="dataContainer shippingMiddleColumn">
+            <div class="dataContainer">
                 <div>{{ data.shippingLogisticData.vehicleTypeSize }}</div>
                 <div class="rowArrayX">
-                  <div *ngFor="let subDim of data.shippingLogisticData.dimension">{{ subDim }}</div>
+                  <p *ngFor="let subDim of data.shippingLogisticData.dimension">{{ subDim }}</p>
                 </div>
                 <div>{{ data.shippingLogisticData.transitMode }}</div>
                 <div>{{ data.shippingLogisticData.pryPacks }}</div>
@@ -189,24 +190,23 @@
                 <div>{{ data.shippingLogisticData.loadUnloadResp }}</div>
                 <div>{{data.shippingLogisticData.supplyAt}}</div>
             </div>
-            <div class="dataContainer spanColumn">
+            <div class="dataContainer">
               <div class="spanHeading">Theoretical XYZ Utilisation</div>
               <div class="spanrow1">{{data.shippingLogisticData.percentageUtiize}}</div>
               <div class="rowArrayY spanrow2">
                 <div>Compliant(>85%)</div>
-                <div>Non-Compliant(<85%)
-                <img src="../assets/chevron-down.svg" alt="dropdown-icon"></div>
+                <div>Non-Compliant(<85%)</div>
               </div>
               <div class="spanrow3">{{data.shippingLogisticData.remarks}}</div>
               <div class="spanrow4"></div>
             </div>
         </div>
-        <p>The design by supplier ensures the undamaged part supply till the point of use on the XYZ company.</p>
+        <p class="shippingText">The design by supplier ensures the undamaged part supply till the point of use on the XYZ company.</p>
       </div>
 
       <div class="comment_section flex-column">
         <p class="heading">5.Miscellaneous Comment</p>
-        <input type="text" />
+        <textarea rows="6" cols="10"></textarea>
       </div>
   
       <div class="approval_section flex-column">
@@ -224,6 +224,7 @@
           </div>
         </div>
       </div>
+      <hr>
       <div class="downloadButton">
         <button>Download</button>
       </div>

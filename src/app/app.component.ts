@@ -82,7 +82,7 @@ export class AppComponent {
     },
     approvalData:[
         {person:"Sanket Pawar",date:"23/02/2024"},
-        {person:"Sanket Pawar",date:"23/02/2024"},
+        {person:"Sanket Pawar",date:"23/02/2024"}
       ]
     }
 
