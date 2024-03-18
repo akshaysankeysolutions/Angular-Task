@@ -18,13 +18,14 @@
     </div>
 
     <div class="package-details">
+
       <div class="supplier-div">
         <div>
           <img src="../assets/defaultImg.png" alt="supplier-image" />
         </div>
 
         <div class="supplier-details flex-column">
-          <p>Supplier Information <span>(Shipping)</span></p>
+          <p class="heading">Supplier Information <span class="subHeading">(Shipping)</span></p>
 
           <div class="supplier-table">
             <div class="supplier-container">
@@ -53,17 +54,22 @@
       </div>
 
       <div class="package-status">
-        <div
-          class="package-status-sub-item"
-          *ngFor="let item of data.packageStatus | keyvalue"
-        >
-          <p class="item">{{ item.key }}</p>
-          <p class="item">{{ item.value }}</p>
+        <div class="package-status-sub-item">
+          <div class="packageHeading">Approval Type</div>
+          <div class="packageInfo">{{data.packageStatus.approvalType}}</div>
+        </div>
+        <div class="package-status-sub-item">
+          <div class="packageHeading">Status</div>
+          <div class="packageInfo">{{data.packageStatus.status}}</div>
+        </div>
+        <div class="package-status-sub-item">
+          <div class="packageHeading">Date of Approval</div>
+          <div class="packageInfo">{{data.packageStatus.dateApproval}}</div>
         </div>
       </div>
 
       <div class="package_part_info flex-column">
-        <p>1. &nbsp; Program and Part Information</p>
+        <p class="heading">1.Program and Part Information</p>
         <div class="package-part-table">
           <div class="package-part-container">
             <div>XYZ Company Receving Location</div>
@@ -94,7 +100,7 @@
       </div>
 
       <div class="visual-references flex-column">
-        <p>2. &nbsp; Visual References (Part & Packaging)</p>
+        <p class="heading">2.Visual References <span class="subHeading">(Part & Packaging)</span></p>
         <div class="package-images-container">
           <div
             class="package_image_block"
@@ -107,7 +113,7 @@
       </div>
 
       <div class="packingData flex-column">
-        <p>3.Packaging Information</p>
+        <p class="heading">3.Packaging Information</p>
         <div class="packaging-spec-container">
           <div class="column">
             <div>Specifications</div>
@@ -154,8 +160,8 @@
         </div>
       </div>
 
-      <div class="flex-column">
-        <p>4.Shipping & Logistics</p>
+      <div class="shippingData flex-column">
+        <p class="heading">4.Shipping & Logistics</p>
         <div class="shippingDataContainer">
             <div class="dataContainer1">
                 <div>Vehicle type / Size</div>
@@ -188,21 +194,23 @@
               <div class="spanrow1">{{data.shippingLogisticData.percentageUtiize}}</div>
               <div class="rowArrayY spanrow2">
                 <div>Compliant(>85%)</div>
-                <div>Non-Compliant(<85%)</div>
+                <div>Non-Compliant(<85%)
+                <img src="../assets/chevron-down.svg" alt="dropdown-icon"></div>
               </div>
               <div class="spanrow3">{{data.shippingLogisticData.remarks}}</div>
               <div class="spanrow4"></div>
             </div>
         </div>
+        <p>The design by supplier ensures the undamaged part supply till the point of use on the XYZ company.</p>
       </div>
 
       <div class="comment_section flex-column">
-        <p>5.Miscellaneous Comment</p>
+        <p class="heading">5.Miscellaneous Comment</p>
         <input type="text" />
       </div>
-
+  
       <div class="approval_section flex-column">
-        <p>6. Approval Information</p>
+        <p class="heading">6. Approval Information</p>
         <div class="approval_data">
           <div class="approval_data_heading">
             <div>Department / Function</div>
@@ -216,15 +224,10 @@
           </div>
         </div>
       </div>
-
-
       <div class="downloadButton">
         <button>Download</button>
       </div>
-
     </div>
-
-
   </main>
 
   <footer>

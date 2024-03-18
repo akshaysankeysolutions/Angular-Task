@@ -19,9 +19,9 @@ export class AppComponent {
       faxNo: "Q5"
     },
     packageStatus:{
-      "Approval Type":"Final",
-      "Status":"Recommended",
-      "Date of Approval":"28-04-2024"
+      approvalType:"Final",
+      status:"Recommended",
+      dateApproval:"28-04-2024"
     },
     programPartInfo:{
       receiverLocation: "ABC to VGH to TYX",
